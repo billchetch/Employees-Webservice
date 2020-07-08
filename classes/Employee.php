@@ -34,4 +34,8 @@ class Employee extends \chetch\db\DBObject{
 	public function getFullName(){
 		return $this->get('full_name');
 	}
+
+	public function getFirstName(){
+		return $this->get('first_name');
+	}
 }
