@@ -39,3 +39,4 @@ class Employee extends \chetch\db\DBObject{
 		return $this->get('first_name');
 	}
 }
+?>

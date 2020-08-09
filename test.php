@@ -7,18 +7,13 @@ use chetch\api\APIMakeRequest as APIMakeRequest;
 
 try{
 	$lf = "\n";
-	$payload = array();
-	$payload["employee_id"] = "88200";
-	$payload["first_name"] = "Billy";
-	$payload["last_name"] = "Bob";
-	$payload["position_id"] = 1;
-	 
-	//$req = APIMakeRequest::createPutRequest("http://127.0.0.1:8004/api", "employee", $payload);
-	//$data = $req->request();
+	$row = array();
+	$row['last_name'] = "Thorgerson R B";
+	$emp = Employee::createInstance($row);
+	print_r($emp->getRowData());
 
-	$data = Employee::createFromEmployeeID("88102");
 
-	var_dump($data);
+	//var_dump($data);
 } catch (Exception $e){
 	echo "EXCEPTION: ".$e->getMessage();
 }
