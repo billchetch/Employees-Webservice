@@ -40,7 +40,7 @@ class EmployeesAPIHandleRequest extends chetch\api\APIHandleRequest{
 			case 'employees':
 				$filter = $request == 'active-employees' ? 'active=1' : '';
 				if(isset($params['position_id']) && $params['position_id'] > 0){
-					$filter.= ($filter ? ' AND ' : '').'position_id=:position_id';
+					$filter.= ($filter ? ' AND ' : '').'position_id='.$params['position_id'];
 				}
 				$data = Employee::createCollectionAsRows($params, $filter, "known_as");
 				break;
