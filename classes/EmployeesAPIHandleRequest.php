@@ -11,8 +11,8 @@ class EmployeesAPIHandleRequest extends chetch\api\APIHandleRequest{
 				$emp = Employee::createFromEmployeeID($resourceID);
 				if($emp && $emp->getEmployeeID()){
 					array_push($resourcePaths, $resourcePathBase.$emp->getEmployeeID());
-					array_push($resourcePaths, $resourcePathBase.$emp->getKnownAs());
-					array_push($resourcePaths, $resourcePathBase.str_replace(' ', '_', $emp->getFullName()));
+					array_push($resourcePaths, $resourcePathBase.strtolower($emp->getKnownAs()));
+					array_push($resourcePaths, $resourcePathBase.strtolower(str_replace(' ', '_', $emp->getFullName())));
 					array_push($resourcePaths, $resourcePathBase.'anonymous');
 				}
 				break;
