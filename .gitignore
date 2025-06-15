@@ -17,3 +17,4 @@ htdocs/html/*
 oauth.json
 *.sql
 !readme
+_config.php
